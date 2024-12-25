@@ -4,13 +4,19 @@ import TypingGame from "./TypingGame";
 import MathGame from "./MathGame";
 import ColorGame from "./ColorGame"
 import NumberGame from "./NumberGame"
+import ColorWordGame from "./ColorWord"
+import AimingGame from "./AimingGame"
+import DifferentLetterGame from "./DifferentLetter"
 
 function GameSelection() {
   const games = [
     { name: "Typing Game", path: "/typing-game", component: <TypingGame /> },
     { name: "Math Game", path: "/math-game", component: <MathGame /> },
     { name: "Color Game", path: "/color-game", component: <ColorGame/> },
-    { name: "Number Game", path: "/number-game", component: <NumberGame/> }
+    { name: "Number Game", path: "/number-game", component: <NumberGame/> },
+    { name: "Color-Word Game", path: "/color-word-game", component: <ColorWordGame/> },
+    { name: "Aiming Game", path: "/aiming-game", component: <AimingGame/> },
+    { name: "Different Letter Game", path: "/different-letter-game", component: <DifferentLetterGame/> }
   ];
 
   return (

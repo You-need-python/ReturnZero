@@ -7,6 +7,7 @@ import NumberGame from "./games/NumberGame"
 import ColorWordGame from "./games/ColorWord"
 import AimingGame from "./games/AimingGame"
 import DifferentLetterGame from "./games/DifferentLetter"
+import "./games/gamestyle.css";
 
 function GameSelection() {
   const games = [

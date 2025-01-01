@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./gamestyle.css";
 
 function TypingGame() {
   const texts = [
@@ -10,8 +9,8 @@ function TypingGame() {
     "The archer won consecutive victories with irresistible force.",
     "Your attitude reminds me of the saying betrayal after usefulness.",
     "I am indecisive and cannot make decisions at crucial moments."
-  ]
-  const [input, setInput] = useState('');
+  ];
+  const [input, setInput] = useState("");
   const text = useState(texts[Math.floor(Math.random() * texts.length)])[0];
   const [end, setEnd] = useState(false);
   const navigate = useNavigate();
@@ -23,16 +22,27 @@ function TypingGame() {
     if (value === text) {
       setEnd(true);
       setTimeout(() => {
-        navigate('/math-game');
+        navigate("/math-game");
       }, 1000);
     }
   };
 
   return (
-    <div className={`column-align fadein ${end ? 'fadeout' : ''}`} >
+    <div className={`column-align fadein ${end ? "fadeout" : ""}`}>
       <h2 className="game-title">Typing Game</h2>
-      <p>{text}</p>
-      <input type="text" autoFocus value={input} onChange={handleChange} disabled={end}/>
+      <h3 className="game-desc">다음 문장을 옮겨 쓰세요!</h3>
+      <p id="text">{text}</p>
+      <form autoComplete="off">
+      <input
+        type="text"
+        autoFocus
+        value={input}
+        onChange={handleChange}
+        disabled={end}
+        id="text-input"
+        autoComplete="off"
+      />
+      </form>
     </div>
   );
 }

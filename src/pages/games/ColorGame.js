@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 
 function ColorGame() {
   const [cards, setCards] = useState(generateCards());
+  const [score, setScore] = useState(0);
+  const [end, setEnd] = useState(false);
+  const navigate = useNavigate();
 
   // 색상 생성 함수
   function generateColor(baseColor, offset = 10) {
@@ -34,14 +38,25 @@ function ColorGame() {
   // 카드 클릭 핸들러
   const handleCardClick = (isDifferent) => {
     if (isDifferent) {
-      setCards(generateCards()); // 새 게임 시작
+      setScore(score + 1);
+      if (score === 4) {
+        setEnd(true);
+        const timer = setTimeout(() => {
+          navigate('/number-game'); // 페이지 이동
+        }, 1000);
+        return () => clearTimeout(timer); // 타이머 클린업
+      } else {
+        setCards(generateCards()); // 새 게임 시작
+      }
     } else {
+      //다를 때 로직
     }
   };
 
   return (
-    <div className="column-align">
+    <div className={`column-align fadein ${end ? 'fadeout' : ''}`}>
       <h2 className="game-title">Color Game</h2>
+      <h3 className="game-desc">다른 색깔의 사각형을 찾으세요! ({score+1 > 5 ? 5 : score+1}/5)</h3>
       <div
         style={{
           display: 'grid',

@@ -3,3 +3,10 @@
     margin-bottom: 25px;
     color: rgba(228,213,129,1);
 }
+
+.game-desc {
+    margin-bottom: 25px;
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    font-size: 20px;
+}

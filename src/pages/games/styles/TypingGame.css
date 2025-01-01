@@ -1,0 +1,21 @@
+#text{
+    font-size: 30px;
+    font-family: 'Noto Sans KR';
+    font-weight: 900;
+    margin-bottom: 40px;
+    padding: 10px 50px;
+    border: 1px solid white;
+    border-radius: 30px;
+}
+
+#text-input {
+    border: none;
+    outline: none;
+    width: 900px;
+    height: 35px;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: center;
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+}

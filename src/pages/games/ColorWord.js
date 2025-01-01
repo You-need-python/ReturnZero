@@ -34,8 +34,8 @@ function ColorWordGame() {
   };
 
   return (
-    <div>
-      <h2>색깔-글자 게임</h2>
+    <div className="column-align">
+      <h2 className="game-title">색깔-글자 게임</h2>
       <p>다음 글자의 <b>색상을</b> 맞추세요!</p>
       <div
         style={{

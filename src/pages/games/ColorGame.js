@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 
 function ColorGame() {
   const [cards, setCards] = useState(generateCards());
-  const [message, setMessage] = useState('');
 
   // 색상 생성 함수
   function generateColor(baseColor, offset = 10) {
@@ -35,17 +34,14 @@ function ColorGame() {
   // 카드 클릭 핸들러
   const handleCardClick = (isDifferent) => {
     if (isDifferent) {
-      setMessage('Correct! 🎉');
       setCards(generateCards()); // 새 게임 시작
     } else {
-      setMessage('Try Again! 😢');
     }
   };
 
   return (
-    <div>
-      <h2>Color Game</h2>
-      <p>Find the card with a different color!</p>
+    <div className="column-align">
+      <h2 className="game-title">Color Game</h2>
       <div
         style={{
           display: 'grid',
@@ -68,7 +64,6 @@ function ColorGame() {
           />
         ))}
       </div>
-      <p>{message}</p>
     </div>
   );
 }

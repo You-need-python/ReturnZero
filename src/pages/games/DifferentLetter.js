@@ -56,8 +56,8 @@ function DifferentLetterGame() {
   };
 
   return (
-    <div>
-      <h2>다른 글자 찾기 게임</h2>
+    <div className="column-align">
+      <h2 className="game-title">다른 글자 찾기 게임</h2>
       <p>다음 단계로 넘어가려면 다른 글자를 클릭하세요!</p>
       <p>
         단계: {currentLevel}/{LEVELS.length}

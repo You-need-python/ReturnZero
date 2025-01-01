@@ -46,8 +46,8 @@ function AimingGame() {
   const elapsedTime = endTime && startTime ? ((endTime - startTime) / 1000).toFixed(2) : null;
 
   return (
-    <div>
-      <h2>Aiming Game</h2>
+    <div className="column-align">
+      <h2 className="game-title">Aiming Game</h2>
       <p>Click all the circles as fast as you can!</p>
       <button onClick={startGame} style={{ marginBottom: '20px', padding: '10px 20px' }}>
         Start Game

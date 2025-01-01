@@ -31,8 +31,8 @@ function NumberGame() {
   };
 
   return (
-    <div>
-      <h2>Number Game</h2>
+    <div className="column-align">
+      <h2 className="game-title">Number Game</h2>
       <p>Click the numbers in order from 1 to 25!</p>
       <div
         style={{

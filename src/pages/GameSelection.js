@@ -20,15 +20,10 @@ function GameSelection() {
   ];
 
   return (
-    <div>
-      <h1>Select a Game</h1>
-      <ul>
-        {games.map((game, index) => (
-          <li key={index}>
-            <Link to={game.path} style={{color: 'blue'}}>{game.name}</Link>
-          </li>
-        ))}
-      </ul>
+    <div id="container">
+      <h1 class="title">게임챌린지</h1>
+      <p class="content">Return0 동아리에서 마련한 게임 챌린지에 참여하여 상품을 얻으세요!</p>
+      <button class="start-btn">START!</button>
       <Routes>
         {games.map((game, index) => (
           <Route path={game.path} element={game.component} />

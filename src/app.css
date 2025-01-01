@@ -1,0 +1,64 @@
+@font-face {
+    font-family: 'EliceDigitalBaeum_Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_220508@1.0/EliceDigitalBaeum_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #161616;
+    color: white;
+    font-family: 'EliceDigitalBaeum_Bold';
+}
+
+#container {
+    margin-top: 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-family: "Noto Sans KR", serif;
+    font-weight: 900;
+    font-size: 96px;
+    letter-spacing: -7px;
+    padding: 7px;
+    background: linear-gradient(144deg, rgba(29,212,218,1) 0%, rgba(228,213,129,1) 50%, rgba(240,69,121,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.content {
+    margin-top: 13px;
+    font-family: "Noto Sans KR", serif;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.start-btn {
+    margin: 40px 0 40px 0;
+    font-family: 'EliceDigitalBaeum_Bold';
+    border: none;
+    padding: 15px 50px 15px 50px;
+    border-radius: 40px;
+    background-color: #2283ff;
+    color: white;
+    font-size: 24px;
+    box-shadow: none;
+    transition: all 0.5s;
+}
+
+.start-btn:hover{
+    background-color: #9db4fc;
+    box-shadow: 0 0 10px #9db4fc,
+                0 0 20px #9db4fc;
+    cursor: pointer;
+}

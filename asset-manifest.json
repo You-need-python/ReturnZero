@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ReturnZero/static/css/main.3ae112b3.css",
+    "main.js": "/ReturnZero/static/js/main.cf2e6611.js",
+    "static/js/488.8f7c5045.chunk.js": "/ReturnZero/static/js/488.8f7c5045.chunk.js",
+    "index.html": "/ReturnZero/index.html",
+    "main.3ae112b3.css.map": "/ReturnZero/static/css/main.3ae112b3.css.map",
+    "main.cf2e6611.js.map": "/ReturnZero/static/js/main.cf2e6611.js.map",
+    "488.8f7c5045.chunk.js.map": "/ReturnZero/static/js/488.8f7c5045.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3ae112b3.css",
+    "static/js/main.cf2e6611.js"
+  ]
+}

@@ -1,13 +1,31 @@
-import React from 'react';
-import { useLocation } from "react-router-dom";
-import "./styles/Result.css"
+import React, { useState } from 'react';
+import { useNavigate, useLocation } from "react-router-dom";
+import "./styles/Result.css";
+import drone from "../../scaleDrone/scaledroneClient";
 
 function Result() {
+    const navigate = useNavigate();
     const location = useLocation();
+    const time = (location.state.time/1000 + 1).toFixed(1);
+    const [name, setName] = useState('');
     const handleSubmit = (e) => {
         e.preventDefault(); // 기본 동작 방지
-        
+        if (time && name) {
+            drone.publish({
+                room: "rankings",
+                message: {name, time},
+            });
+            navigate("/ReturnZero/rank");
+            console.log(time);
+            console.log(name);
+        } else {
+            console.log(time);
+            console.log(name);
+        }
     };
+    const handleChange = (e) => {
+        setName(e.target.value);
+    }
     
     return (
         <div>
@@ -18,6 +36,8 @@ function Result() {
                     type="text"
                     autoFocus
                     id="text-input"
+                    value={name}
+                    onChange={handleChange}
                     autoComplete="off"
                     placeholder="10100 홍길동"
                     style={{

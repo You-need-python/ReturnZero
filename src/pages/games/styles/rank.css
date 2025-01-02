@@ -1,0 +1,7 @@
+.rank-page {
+    width: 300px;
+    height: 500px;
+    overflow: scroll;
+    display: flex;
+    justify-content: center;
+}

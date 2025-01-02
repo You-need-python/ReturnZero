@@ -8,6 +8,7 @@ import ColorWordGame from "./games/ColorWord";
 import AimingGame from "./games/AimingGame";
 import DifferentLetterGame from "./games/DifferentLetter";
 import Result from "./games/Result";
+import Rank from "./games/Rank";
 import "./games/gamestyle.css";
 
 function GameSelection() {
@@ -20,6 +21,7 @@ function GameSelection() {
     { name: "Aiming Game", path: "/ReturnZero/aiming-game", component: <AimingGame /> },
     { name: "Different Letter Game", path: "/ReturnZero/different-letter-game", component: <DifferentLetterGame /> },
     { name: "Result", path: "/ReturnZero/result", component: <Result /> },
+    { name: "Rank", path: "/ReturnZero/rank", component: <Rank /> },
   ];
 
   const [ani, setAni] = useState(true);

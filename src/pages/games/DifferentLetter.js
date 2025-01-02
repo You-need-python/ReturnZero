@@ -39,7 +39,7 @@ function DifferentLetterGame( { stopTimer, elapsedTime } ) {
       setEnd(true);
       setTimeout(() => {
         stopTimer();
-        navigate("/result", { state: { elapsedTime } });
+        navigate("/result", { state: { time: elapsedTime } });
       }, 1000);
     }
   };

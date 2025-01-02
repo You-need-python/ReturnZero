@@ -27,21 +27,25 @@ function TypingGame() {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault(); // 기본 동작 방지
+  };
+
   return (
     <div className={`column-align fadein ${end ? "fadeout" : ""}`}>
       <h2 className="game-title">Typing Game</h2>
       <h3 className="game-desc">다음 문장을 옮겨 쓰세요!</h3>
       <p id="text">{text}</p>
-      <form autoComplete="off">
-      <input
-        type="text"
-        autoFocus
-        value={input}
-        onChange={handleChange}
-        disabled={end}
-        id="text-input"
-        autoComplete="off"
-      />
+      <form autoComplete="off" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          autoFocus
+          value={input}
+          onChange={handleChange}
+          disabled={end}
+          id="text-input"
+          autoComplete="off"
+        />
       </form>
     </div>
   );

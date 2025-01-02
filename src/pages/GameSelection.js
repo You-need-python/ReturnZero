@@ -7,6 +7,7 @@ import NumberGame from "./games/NumberGame";
 import ColorWordGame from "./games/ColorWord";
 import AimingGame from "./games/AimingGame";
 import DifferentLetterGame from "./games/DifferentLetter";
+import Result from "./games/Result";
 import "./games/gamestyle.css";
 
 function GameSelection() {
@@ -18,10 +19,12 @@ function GameSelection() {
     { name: "Color-Word Game", path: "/color-word-game", component: <ColorWordGame /> },
     { name: "Aiming Game", path: "/aiming-game", component: <AimingGame /> },
     { name: "Different Letter Game", path: "/different-letter-game", component: <DifferentLetterGame /> },
+    { name: "Result", path: "/result", component: <Result /> },
   ];
 
   const [ani, setAni] = useState(true);
   const [showGame, setShowGame] = useState(true);
+  const [endGame, setEndGame] = useState(false);
   const [elapsedTime, setElapsedTime] = useState(0);
   const timerRef = useRef(null);
   const navigate = useNavigate();
@@ -35,6 +38,7 @@ function GameSelection() {
 
   const stopTimer = () => {
     clearInterval(timerRef.current);
+    setEndGame(true);
   };
 
   const handleAni = () => {
@@ -45,10 +49,6 @@ function GameSelection() {
       navigate("/typing-game");
     }, 1000);
   };
-
-  useEffect(() => {
-    return () => stopTimer(); // Cleanup timer on unmount
-  }, []);
 
   return (
     <div id="container">
@@ -63,7 +63,7 @@ function GameSelection() {
         </div>
       ) : (
         <div id="game-content">
-          <div className="timer">{elapsedTime/1000}s</div>
+          {!endGame && <div className="timer">{elapsedTime/1000}초</div>}
           <Routes>
             {games.map((game, index) => (
               <Route

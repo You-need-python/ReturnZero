@@ -1,0 +1,7 @@
+.time-result {
+    margin-top: 5vh !important;
+}
+.form{
+    display: flex;
+    justify-content: space-between;
+}

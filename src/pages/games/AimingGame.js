@@ -55,7 +55,7 @@ function AimingGame() {
           width: `${SCREEN_WIDTH}px`,
           height: `${SCREEN_HEIGHT}px`,
           margin: "0 auto",
-          background: "#9431E2",
+          background: "#161616",
           borderRadius: "30px"
         }}
       >

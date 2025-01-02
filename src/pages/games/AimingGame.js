@@ -30,7 +30,7 @@ function AimingGame() {
     if (circles.length === 0) {
       setEnd(true);
       setTimeout(() => {
-        navigate('/different-letter-game');
+        navigate('/ReturnZero/different-letter-game');
       }, 1000);
     }
   },[circles, navigate])

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styled, { keyframes } from "styled-components";
 
 function NumberGame() {
   const [numbers, setNumbers] = useState(generateNumbers());
@@ -26,7 +25,7 @@ function NumberGame() {
       if (number === 25) {
         setEnd(true);
         setTimeout(() => {
-          navigate('/color-word-game');
+          navigate('/ReturnZero/color-word-game');
         }, 1000);
       }
     } else {

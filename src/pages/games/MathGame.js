@@ -43,7 +43,7 @@ function MathGame() {
       if (score === 2) {
         setEnd(true);
         const timer = setTimeout(() => {
-          navigate('/color-game');
+          navigate('/ReturnZero/color-game');
         }, 1000);
         return () => clearTimeout(timer);
       }

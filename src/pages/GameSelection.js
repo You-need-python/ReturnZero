@@ -12,14 +12,14 @@ import "./games/gamestyle.css";
 
 function GameSelection() {
   const games = [
-    { name: "Typing Game", path: "/typing-game", component: <TypingGame /> },
-    { name: "Math Game", path: "/math-game", component: <MathGame /> },
-    { name: "Color Game", path: "/color-game", component: <ColorGame /> },
-    { name: "Number Game", path: "/number-game", component: <NumberGame /> },
-    { name: "Color-Word Game", path: "/color-word-game", component: <ColorWordGame /> },
-    { name: "Aiming Game", path: "/aiming-game", component: <AimingGame /> },
-    { name: "Different Letter Game", path: "/different-letter-game", component: <DifferentLetterGame /> },
-    { name: "Result", path: "/result", component: <Result /> },
+    { name: "Typing Game", path: "/ReturnZero/typing-game", component: <TypingGame /> },
+    { name: "Math Game", path: "/ReturnZero/math-game", component: <MathGame /> },
+    { name: "Color Game", path: "/ReturnZero/color-game", component: <ColorGame /> },
+    { name: "Number Game", path: "/ReturnZero/number-game", component: <NumberGame /> },
+    { name: "Color-Word Game", path: "/ReturnZero/color-word-game", component: <ColorWordGame /> },
+    { name: "Aiming Game", path: "/ReturnZero/aiming-game", component: <AimingGame /> },
+    { name: "Different Letter Game", path: "/ReturnZero/different-letter-game", component: <DifferentLetterGame /> },
+    { name: "Result", path: "/ReturnZero/result", component: <Result /> },
   ];
 
   const [ani, setAni] = useState(true);
@@ -46,7 +46,7 @@ function GameSelection() {
     setTimeout(() => {
       setShowGame(false);
       startTimer();
-      navigate("/typing-game");
+      navigate("/ReturnZero/typing-game");
     }, 1000);
   };
 

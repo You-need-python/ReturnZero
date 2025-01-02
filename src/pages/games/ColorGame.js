@@ -42,7 +42,7 @@ function ColorGame() {
       if (score === 4) {
         setEnd(true);
         const timer = setTimeout(() => {
-          navigate('/number-game'); // 페이지 이동
+          navigate('/ReturnZero/number-game'); // 페이지 이동
         }, 1000);
         return () => clearTimeout(timer); // 타이머 클린업
       } else {

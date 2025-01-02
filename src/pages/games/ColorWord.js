@@ -32,7 +32,7 @@ function ColorWordGame() {
       if (score >= 4) {
         setEnd(true);
         setTimeout(() => {
-          navigate('/aiming-game');
+          navigate('/ReturnZero/aiming-game');
         }, 1000);
       }
     } else {

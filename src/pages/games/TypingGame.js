@@ -22,7 +22,7 @@ function TypingGame() {
     if (value === text) {
       setEnd(true);
       setTimeout(() => {
-        navigate("/math-game");
+        navigate("/ReturnZero/math-game");
       }, 1000);
     }
   };

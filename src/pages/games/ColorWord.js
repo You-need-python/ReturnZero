@@ -36,7 +36,7 @@ function ColorWordGame() {
         }, 1000);
       }
     } else {
-      //오답
+      setScore(0);
     }
     if (score < 4) {setCurrentQuestion(generateQuestion())}; // 새로운 문제 생성
   };

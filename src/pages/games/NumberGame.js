@@ -22,26 +22,17 @@ function NumberGame() {
   const handleNumberClick = (number) => {
     if (number === nextNumber) {
       setNextNumber(nextNumber + 1);
-      if (number === 10) {
+      if (number === 25) {
         setEnd(true);
         setTimeout(() => {
           navigate('/color-word-game');
         }, 1000);
       }
     } else {
+      setNextNumber(1);
+      setNumbers(generateNumbers());
     }
   };
-
-  const btnKeyframe = keyframes`
-    from { 
-      background: #9eebcb;
-      color: #161616;
-    }
-    to {
-      background: #161616; 
-      color: white;
-    }
-  `;
 
   const StyledButton = styled.button`
     background: ${(props) =>
@@ -58,9 +49,6 @@ function NumberGame() {
     cursor: pointer;
     width: 50px;
     height: 50px;
-    animation: ${(props) =>
-        props.nextNumber === props.number + 1 ? btnKeyframe : "none"}
-      0.5s ease forwards;
   `;
 
   return (

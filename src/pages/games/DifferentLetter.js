@@ -8,7 +8,7 @@ const LEVELS = [
   { target: "쑜", options: "쏬" }
 ];
 
-function DifferentLetterGame() {
+function DifferentLetterGame( { stopTimer, elapsedTime } ) {
   const [currentLevel, setCurrentLevel] = useState(1); // 현재 단계
   const gridSize = currentLevel + 3;
   const [grid, setGrid] = useState([]); // 현재 단계의 글자 배열
@@ -19,7 +19,7 @@ function DifferentLetterGame() {
   // 새 레벨의 그리드 생성
   const generateGrid = () => {
     console.log(currentLevel);
-    const { target, options } = LEVELS[0];
+    const { target, options } = LEVELS[currentLevel-1];
     const totalCards = gridSize * gridSize;
     const targetIdx = Math.floor(Math.random() * totalCards); // 다른 글자의 위치
     const newGrid = Array.from({ length: totalCards }, (_, i) =>
@@ -35,10 +35,11 @@ function DifferentLetterGame() {
     if (currentLevel < LEVELS.length) {
       
       setCurrentLevel((prev) => prev + 1);
-    } else {
+    } else { // currentLevel이 최대이면 result라우터로 이동
       setEnd(true);
       setTimeout(() => {
-        navigate("/result");
+        stopTimer();
+        navigate("/result", { state: { elapsedTime } });
       }, 1000);
     }
   };
@@ -67,8 +68,8 @@ function DifferentLetterGame() {
           display: "grid",
           gridTemplateColumns: `repeat(${gridSize}, 1fr)`,
           gap: "10px",
-          width: "400px",
-          height: "400px",
+          width: "350px",
+          height: "350px",
           maxWidth: "400px",
           margin: "20px auto"
         }}
@@ -78,7 +79,7 @@ function DifferentLetterGame() {
             key={index}
             onClick={() => handleCardClick(index)}
             style={{
-              fontSize: "24px",
+              fontSize: "20px",
               padding: "10px",
               backgroundColor: "#9eebcb",
               border: "none",

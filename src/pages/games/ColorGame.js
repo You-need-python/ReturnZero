@@ -49,7 +49,8 @@ function ColorGame() {
         setCards(generateCards()); // 새 게임 시작
       }
     } else {
-      //다를 때 로직
+      setScore(0);
+      setCards(generateCards()); // 새 게임 시작
     }
   };
 

@@ -63,7 +63,7 @@ function GameSelection() {
         </div>
       ) : (
         <div id="game-content">
-          <div className="timer">Elapsed Time: {elapsedTime/1000}s</div>
+          <div className="timer">{elapsedTime/1000}s</div>
           <Routes>
             {games.map((game, index) => (
               <Route

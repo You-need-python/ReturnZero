@@ -20,6 +20,7 @@ function NumberGame() {
 
   // 숫자 클릭 핸들러
   const handleNumberClick = (number) => {
+    console.log('d');
     if (number === nextNumber) {
       setNextNumber(nextNumber + 1);
       if (number === 25) {
@@ -33,23 +34,6 @@ function NumberGame() {
       setNumbers(generateNumbers());
     }
   };
-
-  const StyledButton = styled.button`
-    background: ${(props) =>
-      props.nextNumber <= props.number ? "#9eebcb" : "#161616"};
-    border: none;
-    outline: none;
-    color: ${(props) =>
-      props.nextNumber <= props.number ? "#161616" : "white"};
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    width: 50px;
-    height: 50px;
-  `;
 
   return (
     <div className={`column-align fadein ${end ? "fadeout" : ""}`}>
@@ -65,13 +49,27 @@ function NumberGame() {
         }}
       >
         {numbers.map((number) => (
-          <StyledButton
+          <button
             onClick={() => handleNumberClick(number)}
             number={number}
             nextNumber={nextNumber}
+            style={{
+              background: nextNumber <= number ? "#9eebcb" : "#161616",
+              border: "none",
+              outline: "none",
+              color: nextNumber <= number ? "#161616" : "white",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              fontSize: "30px",
+              fontWeight: "bold",
+              cursor: "pointer",
+              width: "50px",
+              height: "50px"
+            }}
           >
             {number}
-          </StyledButton>
+          </button>
         ))}
       </div>
     </div>

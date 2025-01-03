@@ -1,37 +1,43 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
 import "./styles/Result.css";
-import drone from "../../scaleDrone/scaledroneClient";
+// import drone from "../../scaleDrone/scaledroneClient";
 
 function Result() {
     const navigate = useNavigate();
     const location = useLocation();
     const time = (location.state.time/1000 + 1).toFixed(1);
     const [name, setName] = useState('');
-    const handleSubmit = (e) => {
-        e.preventDefault(); // 기본 동작 방지
-        if (time && name) {
-            drone.publish({
-                room: "rankings",
-                message: {name, time},
-            });
-            navigate("/ReturnZero/rank");
-            console.log(time);
-            console.log(name);
-        } else {
-            console.log(time);
-            console.log(name);
-        }
-    };
+    const [k, setK] = useState(true);
+    // const handleSubmit = (e) => {
+    //     e.preventDefault(); // 기본 동작 방지
+    //     if (time && name) {
+    //         drone.publish({
+    //             room: "rankings",
+    //             message: {name, time},
+    //         });
+    //         navigate("/ReturnZero/");
+    //         console.log(time);
+    //         console.log(name);
+    //     } else {
+    //         console.log(time);
+    //         console.log(name);
+    //     }
+    // };
     const handleChange = (e) => {
         setName(e.target.value);
     }
     
+    const KDH = (e) => {
+        e.preventDefault();
+        setK(false);
+    }
+
     return (
-        <div>
+        <div> 
             <h1 className="title time-result" style={{textAlign: "center"}}>{(location.state.time/1000 + 1).toFixed(1)}초</h1>
             <h2 className="content">학번과 이름을 입력하시면 순위를 보여드립니다.</h2>
-            <form autoComplete="off" className="form" onSubmit={handleSubmit}>
+            <form autoComplete="off" className="form" onSubmit={KDH}>
                 <input
                     type="text"
                     autoFocus
@@ -60,9 +66,10 @@ function Result() {
                         fontSize: "18px",
                         fontFamily: "Noto Sans KR"
                     }}
-                    onClick={handleSubmit}
+                    onClick={KDH}
                 >제출</button>
             </form>
+            {!k && '제출되었습니다!'}<br />{!k && 'Knife Hit를 하셨으면 슬롯머신 체험을 위해 앞으로 가시고,'}<br />{!k && '안 하셨으면 앞의 컴퓨터에서 Knife Hit를 즐기세요!'}
         </div>
     );
 }

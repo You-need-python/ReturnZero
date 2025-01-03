@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ReturnZero/static/css/main.1084b075.css",
-    "main.js": "/ReturnZero/static/js/main.ed5fd2fe.js",
-    "static/js/488.8f7c5045.chunk.js": "/ReturnZero/static/js/488.8f7c5045.chunk.js",
+    "main.css": "/ReturnZero/static/css/main.330a17eb.css",
+    "main.js": "/ReturnZero/static/js/main.9f4e1c02.js",
+    "static/js/488.53efd2f3.chunk.js": "/ReturnZero/static/js/488.53efd2f3.chunk.js",
     "index.html": "/ReturnZero/index.html",
-    "main.1084b075.css.map": "/ReturnZero/static/css/main.1084b075.css.map",
-    "main.ed5fd2fe.js.map": "/ReturnZero/static/js/main.ed5fd2fe.js.map",
-    "488.8f7c5045.chunk.js.map": "/ReturnZero/static/js/488.8f7c5045.chunk.js.map"
+    "main.330a17eb.css.map": "/ReturnZero/static/css/main.330a17eb.css.map",
+    "main.9f4e1c02.js.map": "/ReturnZero/static/js/main.9f4e1c02.js.map",
+    "488.53efd2f3.chunk.js.map": "/ReturnZero/static/js/488.53efd2f3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1084b075.css",
-    "static/js/main.ed5fd2fe.js"
+    "static/css/main.330a17eb.css",
+    "static/js/main.9f4e1c02.js"
   ]
 }
